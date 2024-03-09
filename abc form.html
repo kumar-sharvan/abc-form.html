@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>NAME AND PASSWORD VALIDATION !</h1>
+    <form action="" onsubmit="return validdateform() ">
+        Name : <input type="text" placeholder="Enter your full name" id="name" ><br><br>
+        password: <input type="password" placeholder="Please enter your password" id="password"><br>
+        <br>confirm password: <input type="password" placeholder="Please enter your confirm password" id="cnfrmpassword"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validdateform(){
+            let name=document.getElementById("name").value;
+            let password=document.getElementById("password").value;
+            let cnfrmpassword=document.getElementById("cnfrmpassword").value;
+
+
+            if(name==null || name==""){
+                alert("please Enter your name !")
+                return false;
+            }
+            else if(password==null || password=="" ){
+                alert("please enter your password !")
+                return false;
+            }
+            else if(cnfrmpassword==null || cnfrmpassword=="" ){
+                alert("please enter your confirm password !")
+                return false;
+            }
+            else if(password.lenght<=8){
+                alert("password must be 8 character !")
+                return false;
+            }
+            else if(password!=cnfrmpassword){
+                alert("password must be same !")
+                return false;
+            }
+
+            document.write("your Name is : "+name+"<br>");
+            document.write("your password is : "+password+"<br>");
+            document.write("your confirm pass is : "+cnfrmpassword+"<br>");
+
+        }
+        
+    </script>
+</body>
+</html>
